@@ -8,7 +8,6 @@ import {
   Camera,
   Check,
   ChevronRight,
-  Clock3,
   FileAudio,
   FolderOpen,
   HeartHandshake,
@@ -17,34 +16,93 @@ import {
   Play,
   ShieldCheck,
   Sparkles,
-  UsersRound,
   Video,
 } from "lucide-react";
 import "./styles.css";
 
 const assetPath = (fileName) => `${import.meta.env.BASE_URL}assets/${fileName}`;
 
+const navItems = [
+  ["문제", "#problem"],
+  ["흐름", "#service"],
+  ["화면", "#preview"],
+  ["원칙", "#ethics"],
+  ["사업성", "#business"],
+];
+
+const proofStats = [
+  ["기록", "얼굴과 목소리, 삶의 이야기"],
+  ["동의", "공개 범위와 삭제권 우선"],
+  ["아카이브", "가족만 여는 비공개 보관함"],
+];
+
+const problemPoints = [
+  {
+    icon: Images,
+    title: "자료는 많지만 기억은 흩어집니다",
+    text: "사진첩, 휴대폰, 메신저, 녹음 파일에 부모님의 오늘이 조각난 채 남습니다.",
+  },
+  {
+    icon: AudioLines,
+    title: "목소리와 말투는 다시 촬영할 수 없습니다",
+    text: "표정, 억양, 웃음소리, 이야기의 맥락은 시간이 지나면 복원하기 어렵습니다.",
+  },
+  {
+    icon: LockKeyhole,
+    title: "기술 활용에는 동의와 권한이 필요합니다",
+    text: "가족의 마음만으로는 부족합니다. 기록 당사자의 선택권이 먼저 설계되어야 합니다.",
+  },
+];
+
+const serviceFlow = [
+  {
+    icon: HeartHandshake,
+    title: "초대와 동의",
+    text: "기록 목적, 공개 범위, AI 활용 가능 여부를 부모님이 먼저 선택합니다.",
+  },
+  {
+    icon: Camera,
+    title: "입체 기록 수집",
+    text: "사진, 영상, 인터뷰, 음성, 영상 편지를 하나의 기록 여정으로 모읍니다.",
+  },
+  {
+    icon: Brain,
+    title: "AI 정리와 스토리화",
+    text: "흩어진 자료를 인물, 시기, 사건, 감정 단서별로 정리해 가족이 이해하기 쉽게 만듭니다.",
+  },
+  {
+    icon: Archive,
+    title: "가족 아카이브",
+    text: "권한이 있는 가족만 열람하고, 기념일이나 대화 주제별로 다시 꺼내 봅니다.",
+  },
+  {
+    icon: Sparkles,
+    title: "미래 확장",
+    text: "3D 초상, 제한형 음성, XR·MR 경험은 동의 범위 안에서 단계적으로 연결합니다.",
+  },
+];
+
 const previewScreens = [
   {
     id: "home",
     label: "홈",
-    title: "오늘의 모습, 목소리, 이야기를 기록하세요",
+    title: "가족이 바로 이해하는 기록 대시보드",
     image: assetPath("home-dashboard.png"),
-    text: "가족이 무엇부터 남겨야 하는지 바로 이해하는 첫 화면입니다.",
+    text: "오늘 남겨야 할 기록, 최근 업로드, 가족 공유 상태를 한 화면에서 확인합니다.",
   },
   {
     id: "record",
-    label: "기록하기",
+    label: "기록 센터",
     title: "사진, 인터뷰, 영상 편지를 한 곳에서",
     image: assetPath("record-center.png"),
-    text: "흩어진 자료와 새 기록을 부모님 중심으로 정리합니다.",
+    text: "부모님의 현재 모습과 이야기를 여러 방식으로 수집하고 진행 상태를 관리합니다.",
   },
   {
     id: "consent",
     label: "동의",
-    title: "기록의 주인이 공개 범위를 정합니다",
+    title: "공개 범위는 기록 당사자가 정합니다",
     image: assetPath("consent-settings.png"),
-    text: "생전 동의, 가족 권한, 삭제권을 서비스 흐름 안에 넣었습니다.",
+    text: "생전 동의, 가족 권한, AI 활용 여부, 삭제권을 서비스 흐름 안에 넣었습니다.",
   },
   {
     id: "archive",
@@ -55,44 +113,18 @@ const previewScreens = [
   },
 ];
 
-const problemPoints = [
-  ["흩어진 기록", "사진첩, 메신저, 휴대폰, 녹음 파일에 가족의 기억이 분산됩니다."],
-  ["사라지는 현재", "표정, 말투, 웃음소리, 걸음걸이는 시간이 지나면 다시 촬영할 수 없습니다."],
-  ["세대 간 단절", "손주 세대는 조부모의 삶을 몇 장의 사진과 짧은 기억으로만 접하게 됩니다."],
-];
-
-const flow = [
-  {
-    icon: Camera,
-    color: "orange",
-    title: "1. 입체적인 기록 수집",
-    text: "사진, 영상, 회상 인터뷰, 음성 녹음으로 부모님의 지금을 데이터화합니다.",
-  },
-  {
-    icon: Brain,
-    color: "green",
-    title: "2. AI 기반 정리와 체감",
-    text: "AI가 흩어진 기록을 분류하고, 스토리 아카이브와 제한형 대화 경험으로 연결합니다.",
-  },
-  {
-    icon: Sparkles,
-    color: "blue",
-    title: "3. 미래 대응형 보관",
-    text: "3D 초상, XR, MR 등 미래 기술이 보편화되는 시점에 활용할 수 있도록 안전하게 보관합니다.",
-  },
-  {
-    icon: ShieldCheck,
-    color: "purple",
-    title: "원칙. 당사자 중심 보호",
-    text: "기록 당사자의 생전 동의, 공개 범위, 삭제권, 가족 접근권을 가장 먼저 설계합니다.",
-  },
+const principles = [
+  ["명확한 동의", "수집 목적과 활용 범위를 기록 당사자가 직접 선택합니다."],
+  ["권한별 열람", "가족 구성원마다 볼 수 있는 자료와 기능을 다르게 설정합니다."],
+  ["AI 표시", "AI가 정리하거나 생성한 결과는 원본과 구분해 표시합니다."],
+  ["철회와 삭제", "마음이 바뀌면 언제든 범위를 줄이거나 기록을 삭제할 수 있습니다."],
 ];
 
 const businessModels = [
-  ["기본형", "회상 인터뷰, 음성 보존, 사진·영상 정리 중심의 시작 패키지"],
-  ["프리미엄형", "출장 촬영, 3D 기록, 영상 편지, 입체 초상 제작"],
-  ["구독형", "가족 전용 보관함, 기념일 메시지, 주기적 업데이트"],
-  ["B2B 제휴", "상조회사, 실버타운, 요양기관과 연결되는 가족 기록 인프라"],
+  ["기본 패키지", "회상 인터뷰, 음성 보존, 사진·영상 정리로 시작하는 가족 기록 상품"],
+  ["프리미엄 기록", "출장 촬영, 영상 편지, 3D 초상, 스토리북 제작까지 포함한 고급형"],
+  ["구독 보관함", "가족 전용 클라우드, 기념일 메시지, 주기적 업데이트를 제공"],
+  ["기관 제휴", "상조회사, 실버타운, 요양기관과 연결되는 가족 기록 인프라"],
 ];
 
 function App() {
@@ -107,96 +139,98 @@ function App() {
   return (
     <main className="site-shell">
       <Header />
+
       <section className="hero" id="intro">
-        <div className="hero-copy">
-          <p className="section-mark">Project Gi-Uk</p>
-          <h1>부모님의 오늘을 가족의 미래 자산으로 남깁니다</h1>
+        <img
+          className="hero-image"
+          src={assetPath("giuk-hero-archive.png")}
+          alt="가족 사진, 편지, 가죽 아카이브 앨범으로 구성된 프로젝트 기억 히어로 이미지"
+        />
+        <div className="hero-content">
+          <h1>
+            <span>프로젝트</span>
+            <span>기억</span>
+          </h1>
           <p className="hero-lead">
-            프로젝트 기억은 부모님과 조부모님의 얼굴, 목소리, 삶의 이야기를
-            생전 동의 기반으로 기록하고 AI로 정리해 다음 세대까지 안전하게
-            전하는 가족 기억 아카이브입니다.
+            부모님의 오늘을 가족의 미래 자산으로 남기는 AI 아카이브입니다.
+            얼굴, 목소리, 이야기와 기록 권한까지 생전 동의로 보존합니다.
           </p>
           <div className="hero-actions">
             <a href="#service" className="primary-action">
-              서비스 구조 보기 <ArrowRight size={18} />
+              서비스 흐름 보기 <ArrowRight size={18} />
             </a>
-            <a href="#ethics" className="secondary-action">
-              동의 원칙 확인
+            <a href="#preview" className="ghost-action">
+              제품 화면 보기 <Play size={17} />
             </a>
           </div>
           <div className="hero-proof" aria-label="핵심 가치">
-            <span>
-              <ShieldCheck size={18} /> 생전 동의
-            </span>
-            <span>
-              <Archive size={18} /> 가족 아카이브
-            </span>
-            <span>
-              <LockKeyhole size={18} /> 비공개 기본값
-            </span>
+            {proofStats.map(([title, text]) => (
+              <span key={title}>
+                <strong>{title}</strong>
+                {text}
+              </span>
+            ))}
           </div>
         </div>
-        <div className="hero-visual" aria-label="프로젝트 기억 화면 미리보기">
-          <img src={assetPath("home-dashboard.png")} alt="프로젝트 기억 서비스 홈 화면" />
-          <div className="floating-note">
-            <Clock3 size={18} />
-            <span>오늘이 부모님의 가장 젊고 아름다운 날입니다</span>
-          </div>
+        <div className="hero-rail" aria-hidden="true">
+          <span>기록</span>
+          <span>연결</span>
+          <span className="active">영원</span>
         </div>
       </section>
 
-      <section className="problem band" id="problem">
-        <div className="section-heading">
-          <p className="section-mark">Problem</p>
+      <section className="problem band-light" id="problem">
+        <div className="split-heading">
+          <span className="section-label">Problem</span>
           <h2>사진만으로는 남지 않는 기억이 있습니다</h2>
           <p>
-            가족은 기록을 원하지만 무엇을, 어떻게, 어떤 권한으로 남겨야 할지
-            몰라 자꾸 미룹니다. 프로젝트 기억은 이 공백을 서비스 흐름으로
-            해결합니다.
+            가족은 기록을 원하지만 무엇을, 어떻게, 어떤 권한으로 남겨야 할지 몰라 자꾸 미룹니다.
+            프로젝트 기억은 이 공백을 제품 흐름으로 해결합니다.
           </p>
         </div>
         <div className="problem-grid">
-          {problemPoints.map(([title, text], index) => (
-            <article className="soft-card" key={title}>
-              <span className="number">{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="service" id="service">
-        <div className="section-heading left">
-          <p className="section-mark">Service Flow</p>
-          <h2>기록 수집에서 미래 보관까지, 단계적으로 실현합니다</h2>
-        </div>
-        <div className="timeline">
-          {flow.map((item) => {
+          {problemPoints.map((item) => {
             const Icon = item.icon;
             return (
-              <article className={`flow-card ${item.color}`} key={item.title}>
-                <div className="flow-icon">
-                  <Icon size={28} />
-                </div>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
+              <article className="problem-item" key={item.title}>
+                <Icon size={28} />
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             );
           })}
         </div>
       </section>
 
-      <section className="preview band" id="preview">
+      <section className="service" id="service">
+        <div className="section-heading">
+          <span className="section-label">Service Flow</span>
+          <h2>기록에서 연결까지, 단계마다 안전하게</h2>
+        </div>
+        <div className="flow-line">
+          {serviceFlow.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <article className="flow-step" key={item.title}>
+                <span className="flow-number">{String(index + 1).padStart(2, "0")}</span>
+                <div className="flow-icon">
+                  <Icon size={25} />
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="preview band-dark" id="preview">
         <div className="preview-copy">
-          <p className="section-mark">Prototype</p>
-          <h2>공모전 발표에서 바로 보여줄 수 있는 제품 화면</h2>
+          <span className="section-label">Product Preview</span>
+          <h2>감성은 아카이브처럼, 사용성은 제품처럼</h2>
           <p>
-            참고 이미지의 UI 톤을 유지해 서비스가 실제로 어떻게 작동하는지
-            보여줍니다. 따뜻한 가족 사진과 업무형 대시보드를 결합해 감성과
-            실현 가능성을 함께 전달합니다.
+            발표용 콘셉트가 아니라 실제 서비스처럼 보이도록 기록 수집, 권한 관리,
+            가족 열람 화면을 하나의 흐름으로 연결했습니다.
           </p>
           <div className="preview-tabs" role="tablist" aria-label="제품 화면 선택">
             {previewScreens.map((screen) => (
@@ -225,31 +259,45 @@ function App() {
 
       <section className="technology" id="technology">
         <div className="section-heading">
-          <p className="section-mark">Technology</p>
-          <h2>거대한 재현보다, 안전하게 작동하는 기록 인프라부터</h2>
+          <span className="section-label">Archive System</span>
+          <h2>기억을 모으고, 정리하고, 다시 꺼내는 구조</h2>
         </div>
         <div className="tech-layout">
           <div className="process-frame">
-            <img src={assetPath("process-infographic.png")} alt="프로젝트 기억의 기록 수집, AI 서비스, 미래 아카이브 단계" />
+            <img
+              src={assetPath("process-infographic.png")}
+              alt="프로젝트 기억의 기록 수집, AI 서비스, 미래 아카이브 단계"
+            />
           </div>
           <div className="tech-list">
             <Feature icon={Images} title="시각 기억" text="사진, 영상, 다각도 촬영으로 표정과 자세를 남깁니다." />
             <Feature icon={FileAudio} title="청각 기억" text="회상 인터뷰와 영상 편지로 말투, 억양, 웃음소리를 보존합니다." />
             <Feature icon={FolderOpen} title="스토리 아카이브" text="AI가 흩어진 자료를 분류하고 삶의 이야기를 검색 가능한 기록으로 정리합니다." />
-            <Feature icon={Video} title="미래 확장" text="3D 초상, 제한형 TTS, XR·MR 활용은 동의 범위 안에서 단계적으로 확장합니다." />
+            <Feature icon={Video} title="미래 확장" text="3D 초상, 제한형 음성, XR·MR 활용은 동의 범위 안에서 단계적으로 확장합니다." />
           </div>
         </div>
       </section>
 
-      <section className="ethics band" id="ethics">
+      <section className="ethics band-light" id="ethics">
         <div className="consent-panel">
-          <div>
-            <p className="section-mark">Consent First</p>
+          <div className="consent-copy">
+            <span className="section-label">Consent First</span>
             <h2>가족이 아니라, 기록 당사자가 먼저입니다</h2>
             <p>
-              프로젝트 기억은 부모님을 복제하는 서비스가 아닙니다. 스스로 정한
-              방식으로 기억될 권리를 지키는 서비스입니다.
+              프로젝트 기억은 누군가를 복제하는 서비스가 아닙니다. 스스로 정한 방식으로
+              기억될 권리를 지키는 서비스입니다.
             </p>
+            <div className="principle-grid">
+              {principles.map(([title, text]) => (
+                <article className="principle-item" key={title}>
+                  <Check size={18} />
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
           <div className="consent-widget">
             <div className="widget-header">
@@ -280,15 +328,15 @@ function App() {
               </li>
             </ul>
             <div className="mode-result">
-              현재 선택: <strong>{consentMode}</strong>
+              현재 선택 <strong>{consentMode}</strong>
             </div>
           </div>
         </div>
       </section>
 
       <section className="business" id="business">
-        <div className="section-heading left">
-          <p className="section-mark">Business Model</p>
+        <div className="section-heading align-left">
+          <span className="section-label">Business Model</span>
           <h2>B2C 패키지에서 가족 기록 인프라로 확장합니다</h2>
         </div>
         <div className="business-grid">
@@ -302,13 +350,12 @@ function App() {
         </div>
       </section>
 
-      <section className="closing">
+      <section className="closing band-dark">
         <div>
-          <h2>나중이 아니라, 지금 남기는 가족의 시간</h2>
+          <h2>오늘의 목소리를, 내일의 가족에게.</h2>
           <p>
-            프로젝트 기억은 기술 과시보다 기록의 존엄을 먼저 둡니다. 살아 계신
-            지금의 목소리와 이야기를 안전하게 남기는 것, 그것이 이 서비스의
-            시작입니다.
+            기술보다 먼저 남겨야 할 것은 사람의 선택입니다. 프로젝트 기억은 그 선택을
+            존중하며 가족의 시간을 오래 보관합니다.
           </p>
         </div>
         <a href="#intro" className="primary-action">
@@ -324,16 +371,16 @@ function Header() {
     <header className="topbar">
       <a className="brand" href="#intro" aria-label="프로젝트 기억 홈">
         <span className="brand-mark">
-          <Archive size={24} />
+          <Archive size={22} />
         </span>
         프로젝트 기억
       </a>
       <nav aria-label="주요 섹션">
-        <a href="#problem">문제</a>
-        <a href="#service">서비스</a>
-        <a href="#preview">프로토타입</a>
-        <a href="#ethics">동의</a>
-        <a href="#business">사업성</a>
+        {navItems.map(([label, href]) => (
+          <a href={href} key={href}>
+            {label}
+          </a>
+        ))}
       </nav>
       <a className="top-action" href="#preview">
         화면 보기
@@ -346,7 +393,7 @@ function Feature({ icon: Icon, title, text }) {
   return (
     <article className="feature">
       <div className="feature-icon">
-        <Icon size={23} />
+        <Icon size={22} />
       </div>
       <div>
         <h3>{title}</h3>

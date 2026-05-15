@@ -7434,6 +7434,40 @@ var ArrowRight = createLucideIcon("ArrowRight", [["path", {
 	key: "xquz4c"
 }]]);
 //#endregion
+//#region node_modules/lucide-react/dist/esm/icons/audio-lines.js
+/**
+* @license lucide-react v0.468.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var AudioLines = createLucideIcon("AudioLines", [
+	["path", {
+		d: "M2 10v3",
+		key: "1fnikh"
+	}],
+	["path", {
+		d: "M6 6v11",
+		key: "11sgs0"
+	}],
+	["path", {
+		d: "M10 3v18",
+		key: "yhl04a"
+	}],
+	["path", {
+		d: "M14 8v7",
+		key: "3a1oy3"
+	}],
+	["path", {
+		d: "M18 5v13",
+		key: "123xd1"
+	}],
+	["path", {
+		d: "M22 10v3",
+		key: "154ddg"
+	}]
+]);
+//#endregion
 //#region node_modules/lucide-react/dist/esm/icons/brain.js
 /**
 * @license lucide-react v0.468.0 - ISC
@@ -7521,23 +7555,6 @@ var ChevronRight = createLucideIcon("ChevronRight", [["path", {
 	key: "mthhwq"
 }]]);
 //#endregion
-//#region node_modules/lucide-react/dist/esm/icons/clock-3.js
-/**
-* @license lucide-react v0.468.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
-var Clock3 = createLucideIcon("Clock3", [["circle", {
-	cx: "12",
-	cy: "12",
-	r: "10",
-	key: "1mglay"
-}], ["polyline", {
-	points: "12 6 12 12 16.5 12",
-	key: "1aq6pp"
-}]]);
-//#endregion
 //#region node_modules/lucide-react/dist/esm/icons/file-audio.js
 /**
 * @license lucide-react v0.468.0 - ISC
@@ -7571,6 +7588,32 @@ var FolderOpen = createLucideIcon("FolderOpen", [["path", {
 	d: "m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2",
 	key: "usdka0"
 }]]);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/heart-handshake.js
+/**
+* @license lucide-react v0.468.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var HeartHandshake = createLucideIcon("HeartHandshake", [
+	["path", {
+		d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
+		key: "c3ymky"
+	}],
+	["path", {
+		d: "M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66",
+		key: "4oyue0"
+	}],
+	["path", {
+		d: "m18 15-2-2",
+		key: "60u0ii"
+	}],
+	["path", {
+		d: "m15 18-2-2",
+		key: "6p76be"
+	}]
+]);
 //#endregion
 //#region node_modules/lucide-react/dist/esm/icons/images.js
 /**
@@ -7631,6 +7674,18 @@ var LockKeyhole = createLucideIcon("LockKeyhole", [
 		key: "1pqi11"
 	}]
 ]);
+//#endregion
+//#region node_modules/lucide-react/dist/esm/icons/play.js
+/**
+* @license lucide-react v0.468.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Play = createLucideIcon("Play", [["polygon", {
+	points: "6 3 20 12 6 21 6 3",
+	key: "1oa8hb"
+}]]);
 //#endregion
 //#region node_modules/lucide-react/dist/esm/icons/shield-check.js
 /**
@@ -7741,27 +7796,83 @@ var import_jsx_runtime = (/* @__PURE__ */ __commonJSMin(((exports, module) => {
 	module.exports = require_react_jsx_runtime_production_min();
 })))();
 var assetPath = (fileName) => `/Project-Gi-Uk/assets/${fileName}`;
+var navItems = [
+	["문제", "#problem"],
+	["흐름", "#service"],
+	["화면", "#preview"],
+	["원칙", "#ethics"],
+	["사업성", "#business"]
+];
+var proofStats = [
+	["기록", "얼굴과 목소리, 삶의 이야기"],
+	["동의", "공개 범위와 삭제권 우선"],
+	["아카이브", "가족만 여는 비공개 보관함"]
+];
+var problemPoints = [
+	{
+		icon: Images,
+		title: "자료는 많지만 기억은 흩어집니다",
+		text: "사진첩, 휴대폰, 메신저, 녹음 파일에 부모님의 오늘이 조각난 채 남습니다."
+	},
+	{
+		icon: AudioLines,
+		title: "목소리와 말투는 다시 촬영할 수 없습니다",
+		text: "표정, 억양, 웃음소리, 이야기의 맥락은 시간이 지나면 복원하기 어렵습니다."
+	},
+	{
+		icon: LockKeyhole,
+		title: "기술 활용에는 동의와 권한이 필요합니다",
+		text: "가족의 마음만으로는 부족합니다. 기록 당사자의 선택권이 먼저 설계되어야 합니다."
+	}
+];
+var serviceFlow = [
+	{
+		icon: HeartHandshake,
+		title: "초대와 동의",
+		text: "기록 목적, 공개 범위, AI 활용 가능 여부를 부모님이 먼저 선택합니다."
+	},
+	{
+		icon: Camera,
+		title: "입체 기록 수집",
+		text: "사진, 영상, 인터뷰, 음성, 영상 편지를 하나의 기록 여정으로 모읍니다."
+	},
+	{
+		icon: Brain,
+		title: "AI 정리와 스토리화",
+		text: "흩어진 자료를 인물, 시기, 사건, 감정 단서별로 정리해 가족이 이해하기 쉽게 만듭니다."
+	},
+	{
+		icon: Archive,
+		title: "가족 아카이브",
+		text: "권한이 있는 가족만 열람하고, 기념일이나 대화 주제별로 다시 꺼내 봅니다."
+	},
+	{
+		icon: Sparkles,
+		title: "미래 확장",
+		text: "3D 초상, 제한형 음성, XR·MR 경험은 동의 범위 안에서 단계적으로 연결합니다."
+	}
+];
 var previewScreens = [
 	{
 		id: "home",
 		label: "홈",
-		title: "오늘의 모습, 목소리, 이야기를 기록하세요",
+		title: "가족이 바로 이해하는 기록 대시보드",
 		image: assetPath("home-dashboard.png"),
-		text: "가족이 무엇부터 남겨야 하는지 바로 이해하는 첫 화면입니다."
+		text: "오늘 남겨야 할 기록, 최근 업로드, 가족 공유 상태를 한 화면에서 확인합니다."
 	},
 	{
 		id: "record",
-		label: "기록하기",
+		label: "기록 센터",
 		title: "사진, 인터뷰, 영상 편지를 한 곳에서",
 		image: assetPath("record-center.png"),
-		text: "흩어진 자료와 새 기록을 부모님 중심으로 정리합니다."
+		text: "부모님의 현재 모습과 이야기를 여러 방식으로 수집하고 진행 상태를 관리합니다."
 	},
 	{
 		id: "consent",
 		label: "동의",
-		title: "기록의 주인이 공개 범위를 정합니다",
+		title: "공개 범위는 기록 당사자가 정합니다",
 		image: assetPath("consent-settings.png"),
-		text: "생전 동의, 가족 권한, 삭제권을 서비스 흐름 안에 넣었습니다."
+		text: "생전 동의, 가족 권한, AI 활용 여부, 삭제권을 서비스 흐름 안에 넣었습니다."
 	},
 	{
 		id: "archive",
@@ -7771,42 +7882,17 @@ var previewScreens = [
 		text: "사진, 음성, 영상, 이야기 기록을 가족만의 프라이빗 공간에 보관합니다."
 	}
 ];
-var problemPoints = [
-	["흩어진 기록", "사진첩, 메신저, 휴대폰, 녹음 파일에 가족의 기억이 분산됩니다."],
-	["사라지는 현재", "표정, 말투, 웃음소리, 걸음걸이는 시간이 지나면 다시 촬영할 수 없습니다."],
-	["세대 간 단절", "손주 세대는 조부모의 삶을 몇 장의 사진과 짧은 기억으로만 접하게 됩니다."]
-];
-var flow = [
-	{
-		icon: Camera,
-		color: "orange",
-		title: "1. 입체적인 기록 수집",
-		text: "사진, 영상, 회상 인터뷰, 음성 녹음으로 부모님의 지금을 데이터화합니다."
-	},
-	{
-		icon: Brain,
-		color: "green",
-		title: "2. AI 기반 정리와 체감",
-		text: "AI가 흩어진 기록을 분류하고, 스토리 아카이브와 제한형 대화 경험으로 연결합니다."
-	},
-	{
-		icon: Sparkles,
-		color: "blue",
-		title: "3. 미래 대응형 보관",
-		text: "3D 초상, XR, MR 등 미래 기술이 보편화되는 시점에 활용할 수 있도록 안전하게 보관합니다."
-	},
-	{
-		icon: ShieldCheck,
-		color: "purple",
-		title: "원칙. 당사자 중심 보호",
-		text: "기록 당사자의 생전 동의, 공개 범위, 삭제권, 가족 접근권을 가장 먼저 설계합니다."
-	}
+var principles = [
+	["명확한 동의", "수집 목적과 활용 범위를 기록 당사자가 직접 선택합니다."],
+	["권한별 열람", "가족 구성원마다 볼 수 있는 자료와 기능을 다르게 설정합니다."],
+	["AI 표시", "AI가 정리하거나 생성한 결과는 원본과 구분해 표시합니다."],
+	["철회와 삭제", "마음이 바뀌면 언제든 범위를 줄이거나 기록을 삭제할 수 있습니다."]
 ];
 var businessModels = [
-	["기본형", "회상 인터뷰, 음성 보존, 사진·영상 정리 중심의 시작 패키지"],
-	["프리미엄형", "출장 촬영, 3D 기록, 영상 편지, 입체 초상 제작"],
-	["구독형", "가족 전용 보관함, 기념일 메시지, 주기적 업데이트"],
-	["B2B 제휴", "상조회사, 실버타운, 요양기관과 연결되는 가족 기록 인프라"]
+	["기본 패키지", "회상 인터뷰, 음성 보존, 사진·영상 정리로 시작하는 가족 기록 상품"],
+	["프리미엄 기록", "출장 촬영, 영상 편지, 3D 초상, 스토리북 제작까지 포함한 고급형"],
+	["구독 보관함", "가족 전용 클라우드, 기념일 메시지, 주기적 업데이트를 제공"],
+	["기관 제휴", "상조회사, 실버타운, 요양기관과 연결되는 가족 기록 인프라"]
 ];
 function App() {
 	const [activePreview, setActivePreview] = (0, import_react.useState)(previewScreens[0]);
@@ -7819,115 +7905,124 @@ function App() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "hero",
 				id: "intro",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "hero-copy",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "section-mark",
-							children: "Project Gi-Uk"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", { children: "부모님의 오늘을 가족의 미래 자산으로 남깁니다" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "hero-lead",
-							children: "프로젝트 기억은 부모님과 조부모님의 얼굴, 목소리, 삶의 이야기를 생전 동의 기반으로 기록하고 AI로 정리해 다음 세대까지 안전하게 전하는 가족 기억 아카이브입니다."
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "hero-actions",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: "#service",
-								className: "primary-action",
-								children: ["서비스 구조 보기 ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { size: 18 })]
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-								href: "#ethics",
-								className: "secondary-action",
-								children: "동의 원칙 확인"
-							})]
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "hero-proof",
-							"aria-label": "핵심 가치",
-							children: [
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldCheck, { size: 18 }), " 생전 동의"] }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Archive, { size: 18 }), " 가족 아카이브"] }),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LockKeyhole, { size: 18 }), " 비공개 기본값"] })
-							]
-						})
-					]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "hero-visual",
-					"aria-label": "프로젝트 기억 화면 미리보기",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-						src: assetPath("home-dashboard.png"),
-						alt: "프로젝트 기억 서비스 홈 화면"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "floating-note",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock3, { size: 18 }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "오늘이 부모님의 가장 젊고 아름다운 날입니다" })]
-					})]
-				})]
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						className: "hero-image",
+						src: assetPath("giuk-hero-archive.png"),
+						alt: "가족 사진, 편지, 가죽 아카이브 앨범으로 구성된 프로젝트 기억 히어로 이미지"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "hero-content",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "프로젝트" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "기억" })] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "hero-lead",
+								children: "부모님의 오늘을 가족의 미래 자산으로 남기는 AI 아카이브입니다. 얼굴, 목소리, 이야기와 기록 권한까지 생전 동의로 보존합니다."
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "hero-actions",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: "#service",
+									className: "primary-action",
+									children: ["서비스 흐름 보기 ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { size: 18 })]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: "#preview",
+									className: "ghost-action",
+									children: ["제품 화면 보기 ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Play, { size: 17 })]
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "hero-proof",
+								"aria-label": "핵심 가치",
+								children: proofStats.map(([title, text]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: title }), text] }, title))
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "hero-rail",
+						"aria-hidden": "true",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "기록" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "연결" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "active",
+								children: "영원"
+							})
+						]
+					})
+				]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-				className: "problem band",
+				className: "problem band-light",
 				id: "problem",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "section-heading",
+					className: "split-heading",
 					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "section-mark",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "section-label",
 							children: "Problem"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "사진만으로는 남지 않는 기억이 있습니다" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "가족은 기록을 원하지만 무엇을, 어떻게, 어떤 권한으로 남겨야 할지 몰라 자꾸 미룹니다. 프로젝트 기억은 이 공백을 서비스 흐름으로 해결합니다." })
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "가족은 기록을 원하지만 무엇을, 어떻게, 어떤 권한으로 남겨야 할지 몰라 자꾸 미룹니다. 프로젝트 기억은 이 공백을 제품 흐름으로 해결합니다." })
 					]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "problem-grid",
-					children: problemPoints.map(([title, text], index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-						className: "soft-card",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "number",
-								children: index + 1
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: title }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: text })
-						]
-					}, title))
+					children: problemPoints.map((item) => {
+						const Icon = item.icon;
+						return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
+							className: "problem-item",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { size: 28 }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: item.title }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: item.text })
+							]
+						}, item.title);
+					})
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "service",
 				id: "service",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "section-heading left",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "section-mark",
+					className: "section-heading",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "section-label",
 						children: "Service Flow"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "기록 수집에서 미래 보관까지, 단계적으로 실현합니다" })]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "기록에서 연결까지, 단계마다 안전하게" })]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "timeline",
-					children: flow.map((item) => {
+					className: "flow-line",
+					children: serviceFlow.map((item, index) => {
 						const Icon = item.icon;
 						return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-							className: `flow-card ${item.color}`,
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "flow-icon",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { size: 28 })
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: item.title }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: item.text })] })]
+							className: "flow-step",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "flow-number",
+									children: String(index + 1).padStart(2, "0")
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "flow-icon",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { size: 25 })
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: item.title }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: item.text })
+							]
 						}, item.title);
 					})
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-				className: "preview band",
+				className: "preview band-dark",
 				id: "preview",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "preview-copy",
 					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "section-mark",
-							children: "Prototype"
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "section-label",
+							children: "Product Preview"
 						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "공모전 발표에서 바로 보여줄 수 있는 제품 화면" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "참고 이미지의 UI 톤을 유지해 서비스가 실제로 어떻게 작동하는지 보여줍니다. 따뜻한 가족 사진과 업무형 대시보드를 결합해 감성과 실현 가능성을 함께 전달합니다." }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "감성은 아카이브처럼, 사용성은 제품처럼" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "발표용 콘셉트가 아니라 실제 서비스처럼 보이도록 기록 수집, 권한 관리, 가족 열람 화면을 하나의 흐름으로 연결했습니다." }),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "preview-tabs",
 							role: "tablist",
@@ -7956,10 +8051,10 @@ function App() {
 				id: "technology",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "section-heading",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "section-mark",
-						children: "Technology"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "거대한 재현보다, 안전하게 작동하는 기록 인프라부터" })]
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "section-label",
+						children: "Archive System"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "기억을 모으고, 정리하고, 다시 꺼내는 구조" })]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "tech-layout",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -7989,25 +8084,35 @@ function App() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Feature, {
 								icon: Video,
 								title: "미래 확장",
-								text: "3D 초상, 제한형 TTS, XR·MR 활용은 동의 범위 안에서 단계적으로 확장합니다."
+								text: "3D 초상, 제한형 음성, XR·MR 활용은 동의 범위 안에서 단계적으로 확장합니다."
 							})
 						]
 					})]
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-				className: "ethics band",
+				className: "ethics band-light",
 				id: "ethics",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "consent-panel",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "section-mark",
-							children: "Consent First"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "가족이 아니라, 기록 당사자가 먼저입니다" }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "프로젝트 기억은 부모님을 복제하는 서비스가 아닙니다. 스스로 정한 방식으로 기억될 권리를 지키는 서비스입니다." })
-					] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "consent-copy",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "section-label",
+								children: "Consent First"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "가족이 아니라, 기록 당사자가 먼저입니다" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "프로젝트 기억은 누군가를 복제하는 서비스가 아닙니다. 스스로 정한 방식으로 기억될 권리를 지키는 서비스입니다." }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "principle-grid",
+								children: principles.map(([title, text]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
+									className: "principle-item",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { size: 18 }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: title }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: text })] })]
+								}, title))
+							})
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "consent-widget",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -8037,7 +8142,7 @@ function App() {
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "mode-result",
-								children: ["현재 선택: ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: consentMode })]
+								children: ["현재 선택 ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: consentMode })]
 							})
 						]
 					})]
@@ -8047,9 +8152,9 @@ function App() {
 				className: "business",
 				id: "business",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "section-heading left",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "section-mark",
+					className: "section-heading align-left",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "section-label",
 						children: "Business Model"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "B2C 패키지에서 가족 기록 인프라로 확장합니다" })]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
@@ -8065,8 +8170,8 @@ function App() {
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-				className: "closing",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "나중이 아니라, 지금 남기는 가족의 시간" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "프로젝트 기억은 기술 과시보다 기록의 존엄을 먼저 둡니다. 살아 계신 지금의 목소리와 이야기를 안전하게 남기는 것, 그것이 이 서비스의 시작입니다." })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+				className: "closing band-dark",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: "오늘의 목소리를, 내일의 가족에게." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "기술보다 먼저 남겨야 할 것은 사람의 선택입니다. 프로젝트 기억은 그 선택을 존중하며 가족의 시간을 오래 보관합니다." })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "#intro",
 					className: "primary-action",
 					children: ["처음으로 돌아가기 ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { size: 18 })]
@@ -8085,33 +8190,15 @@ function Header() {
 				"aria-label": "프로젝트 기억 홈",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 					className: "brand-mark",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Archive, { size: 24 })
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Archive, { size: 22 })
 				}), "프로젝트 기억"]
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
 				"aria-label": "주요 섹션",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "#problem",
-						children: "문제"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "#service",
-						children: "서비스"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "#preview",
-						children: "프로토타입"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "#ethics",
-						children: "동의"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "#business",
-						children: "사업성"
-					})
-				]
+				children: navItems.map(([label, href]) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+					href,
+					children: label
+				}, href))
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 				className: "top-action",
@@ -8126,7 +8213,7 @@ function Feature({ icon: Icon, title, text }) {
 		className: "feature",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 			className: "feature-icon",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { size: 23 })
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { size: 22 })
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: title }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: text })] })]
 	});
 }
