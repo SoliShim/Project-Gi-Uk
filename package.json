@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "vite build --minify false --emptyOutDir false",
+    "build": "vite build --minify false",
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {

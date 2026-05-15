@@ -22,33 +22,35 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
+const assetPath = (fileName) => `${import.meta.env.BASE_URL}assets/${fileName}`;
+
 const previewScreens = [
   {
     id: "home",
     label: "홈",
     title: "오늘의 모습, 목소리, 이야기를 기록하세요",
-    image: "/assets/home-dashboard.png",
+    image: assetPath("home-dashboard.png"),
     text: "가족이 무엇부터 남겨야 하는지 바로 이해하는 첫 화면입니다.",
   },
   {
     id: "record",
     label: "기록하기",
     title: "사진, 인터뷰, 영상 편지를 한 곳에서",
-    image: "/assets/record-center.png",
+    image: assetPath("record-center.png"),
     text: "흩어진 자료와 새 기록을 부모님 중심으로 정리합니다.",
   },
   {
     id: "consent",
     label: "동의",
     title: "기록의 주인이 공개 범위를 정합니다",
-    image: "/assets/consent-settings.png",
+    image: assetPath("consent-settings.png"),
     text: "생전 동의, 가족 권한, 삭제권을 서비스 흐름 안에 넣었습니다.",
   },
   {
     id: "archive",
     label: "아카이브",
     title: "오래 보관하고, 필요할 때 다시 꺼냅니다",
-    image: "/assets/family-archive.png",
+    image: assetPath("family-archive.png"),
     text: "사진, 음성, 영상, 이야기 기록을 가족만의 프라이빗 공간에 보관합니다.",
   },
 ];
@@ -135,7 +137,7 @@ function App() {
           </div>
         </div>
         <div className="hero-visual" aria-label="프로젝트 기억 화면 미리보기">
-          <img src="/assets/home-dashboard.png" alt="프로젝트 기억 서비스 홈 화면" />
+          <img src={assetPath("home-dashboard.png")} alt="프로젝트 기억 서비스 홈 화면" />
           <div className="floating-note">
             <Clock3 size={18} />
             <span>오늘이 부모님의 가장 젊고 아름다운 날입니다</span>
@@ -228,7 +230,7 @@ function App() {
         </div>
         <div className="tech-layout">
           <div className="process-frame">
-            <img src="/assets/process-infographic.png" alt="프로젝트 기억의 기록 수집, AI 서비스, 미래 아카이브 단계" />
+            <img src={assetPath("process-infographic.png")} alt="프로젝트 기억의 기록 수집, AI 서비스, 미래 아카이브 단계" />
           </div>
           <div className="tech-list">
             <Feature icon={Images} title="시각 기억" text="사진, 영상, 다각도 촬영으로 표정과 자세를 남깁니다." />
