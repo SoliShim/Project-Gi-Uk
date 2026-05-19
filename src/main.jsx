@@ -34,7 +34,6 @@ const webImagePath = (fileName) => assetPath(`web-images/${fileName}`);
 
 const sources = {
   aging: "https://www.kostat.go.kr/board.es?act=view&bid=10820&list_no=438832&mid=a10301010000&nPage=1&ref_bid=&tag=",
-  deaths: "https://www.korea.kr/news/policyNewsView.do?newsId=156745912",
   prepaid: "https://dailian.co.kr/news/view/1516602/",
   projection: "https://www.kostat.go.kr/board.es?act=view&bid=207&list_no=415453&mid=a10301020600",
   hereafter: "https://www.hereafter.ai/",
@@ -166,7 +165,7 @@ const webVisuals = [
 ];
 
 const marketRows = [
-  ["인구 자연 감소", "2025년 사망자 수가 출생아 수를 앞지르는 구조 고착", "기록되지 못한 가족 서사의 골든타임이 짧아집니다."],
+  ["초고령사회 진입", "2025년 65세 이상 인구 비중 20.3%", "가족 기록과 돌봄 경험을 디지털로 정리하려는 수요가 커집니다."],
   ["초고령화 가속", "2025년 65세 이상 20.3%, 2070년 46.4% 전망", "기억 보존 니즈가 특정 세대가 아닌 보편적 생활 문제로 확장됩니다."],
   ["시장 기회", "상조·선불식 할부 시장 선수금 10.3조 원 규모", "기존 장례·요양·실버 산업의 디지털 전환 수요를 흡수할 수 있습니다."],
 ];
@@ -192,17 +191,6 @@ const marketStats = [
     segments: [
       { label: "65세 이상", value: 1051.4, color: "#557a61" },
       { label: "그 외 인구", value: 4117.1, color: "#dbe3db" },
-    ],
-  },
-  {
-    value: "36.3만",
-    label: "2025년 사망자 수 잠정",
-    source: "국가데이터처",
-    href: sources.deaths,
-    center: "36.3만",
-    segments: [
-      { label: "사망자", value: 36.34, color: "#365c46" },
-      { label: "출생아", value: 25.45, color: "#d7a14f" },
     ],
   },
   {
@@ -503,9 +491,9 @@ function App() {
         <SectionHeading
           label="Market Urgency"
           title="고령화 사회에는 기억을 보존하는 인프라가 필요합니다"
-          text="상실 이후의 슬픔과 디지털 유산 관리 공백은 개인의 문제가 아니라 가족 단위의 반복적인 생활 문제입니다."
+          text="고령화와 디지털 유산 관리 공백은 개인의 문제가 아니라 가족 단위의 반복적인 생활 문제입니다."
         />
-        <div className="stat-grid stat-grid-five">
+        <div className="stat-grid">
           {marketStats.map((stat) => (
             <article className="stat-card" key={stat.label}>
               <div className="stat-kicker">{stat.source}</div>
@@ -844,9 +832,7 @@ function Header({ activeSection }) {
   return (
     <header className="topbar">
       <a className="brand" href="#intro" aria-label="프로젝트 기억 홈">
-        <span className="brand-mark">
-          <Archive size={22} />
-        </span>
+        <span className="brand-mark" aria-hidden="true">💭</span>
         <span>프로젝트 기억</span>
       </a>
       <nav aria-label="주요 섹션">

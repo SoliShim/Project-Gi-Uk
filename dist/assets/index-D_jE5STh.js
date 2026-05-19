@@ -8075,7 +8075,6 @@ var pdfAssetPath = (fileName) => assetPath(`pdf-extracted/${fileName}`);
 var webImagePath = (fileName) => assetPath(`web-images/${fileName}`);
 var sources = {
 	aging: "https://www.kostat.go.kr/board.es?act=view&bid=10820&list_no=438832&mid=a10301010000&nPage=1&ref_bid=&tag=",
-	deaths: "https://www.korea.kr/news/policyNewsView.do?newsId=156745912",
 	prepaid: "https://dailian.co.kr/news/view/1516602/",
 	projection: "https://www.kostat.go.kr/board.es?act=view&bid=207&list_no=415453&mid=a10301020600",
 	hereafter: "https://www.hereafter.ai/",
@@ -8237,9 +8236,9 @@ var webVisuals = [
 ];
 var marketRows = [
 	[
-		"인구 자연 감소",
-		"2025년 사망자 수가 출생아 수를 앞지르는 구조 고착",
-		"기록되지 못한 가족 서사의 골든타임이 짧아집니다."
+		"초고령사회 진입",
+		"2025년 65세 이상 인구 비중 20.3%",
+		"가족 기록과 돌봄 경험을 디지털로 정리하려는 수요가 커집니다."
 	],
 	[
 		"초고령화 가속",
@@ -8283,22 +8282,6 @@ var marketStats = [
 			label: "그 외 인구",
 			value: 4117.1,
 			color: "#dbe3db"
-		}]
-	},
-	{
-		value: "36.3만",
-		label: "2025년 사망자 수 잠정",
-		source: "국가데이터처",
-		href: sources.deaths,
-		center: "36.3만",
-		segments: [{
-			label: "사망자",
-			value: 36.34,
-			color: "#365c46"
-		}, {
-			label: "출생아",
-			value: 25.45,
-			color: "#d7a14f"
 		}]
 	},
 	{
@@ -8742,10 +8725,10 @@ function App() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SectionHeading, {
 						label: "Market Urgency",
 						title: "고령화 사회에는 기억을 보존하는 인프라가 필요합니다",
-						text: "상실 이후의 슬픔과 디지털 유산 관리 공백은 개인의 문제가 아니라 가족 단위의 반복적인 생활 문제입니다."
+						text: "고령화와 디지털 유산 관리 공백은 개인의 문제가 아니라 가족 단위의 반복적인 생활 문제입니다."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "stat-grid stat-grid-five",
+						className: "stat-grid",
 						children: marketStats.map((stat) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
 							className: "stat-card",
 							children: [
@@ -9185,7 +9168,8 @@ function Header({ activeSection }) {
 				"aria-label": "프로젝트 기억 홈",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 					className: "brand-mark",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Archive, { size: 22 })
+					"aria-hidden": "true",
+					children: "💭"
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "프로젝트 기억" })]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
