@@ -8081,6 +8081,12 @@ var sources = {
 	remento: "https://www.remento.co/",
 	storyfile: "https://www.storyfile.com/"
 };
+var techSources = {
+	gaussian: "https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/",
+	whisper: "https://github.com/openai/whisper",
+	pgvector: "https://github.com/pgvector/pgvector",
+	s3Lock: "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html"
+};
 var navItems = [
 	["비전", "#vision"],
 	["시장 기회", "#market"],
@@ -8518,6 +8524,40 @@ var securityControls = [
 	["TLS 1.3", "가족 열람, 업로드, API 연동 구간 암호화"],
 	["RBAC", "당사자, 가족 관리자, 열람자, 기관 계정을 역할별 분리"]
 ];
+var technicalProofs = [
+	{
+		icon: Camera,
+		label: "Capture Reliability",
+		title: "스마트폰 촬영만으로 시작하는 3D 원본 수집",
+		text: "첫 제품은 고가 장비를 요구하지 않고 다중 시점 영상에서 프레임을 추출합니다. 품질이 부족한 경우 즉시 재촬영 가이드를 띄워 원본 확보 실패를 줄입니다.",
+		metric: "검증 기준: 얼굴 120도 이상, 흔들림 프레임 제외, 원본 체크섬 저장",
+		href: techSources.gaussian
+	},
+	{
+		icon: AudioLines,
+		label: "Voice Memory",
+		title: "음성은 먼저 전사·색인하고, 합성은 동의 후 확장",
+		text: "Whisper 기반 전사로 회상 인터뷰를 검색 가능한 문장 단위로 만들고, TTS는 생전 동의와 워터마크 조건을 통과한 계정에만 단계적으로 제공합니다.",
+		metric: "검증 기준: 원본 음성 타임코드, 전사문, 요약문을 함께 보관",
+		href: techSources.whisper
+	},
+	{
+		icon: Network,
+		label: "Searchable Legacy",
+		title: "가족 질문에 답하는 RAG 아카이브",
+		text: "전사문과 사진 설명을 pgvector로 임베딩하고 OpenSearch로 키워드 검색을 결합해, 가족이 묻는 질문에 원본 근거가 붙은 답변만 보여줍니다.",
+		metric: "검증 기준: 모든 AI 답변에 원본 파일·문장·접근 권한 연결",
+		href: techSources.pgvector
+	},
+	{
+		icon: ShieldCheck,
+		label: "Long-term Trust",
+		title: "원본은 변경 불가능한 보관 계층으로 분리",
+		text: "업로드된 원본 미디어는 생성 결과와 분리하고, 장기 보관 버킷에는 삭제·덮어쓰기 방지 정책을 적용해 가족 기록의 증거성을 유지합니다.",
+		metric: "검증 기준: 원본/가공본 분리, 보관 기간, 삭제 요청 로그 추적",
+		href: techSources.s3Lock
+	}
+];
 var pipelineRows = [
 	[
 		"3D Rendering",
@@ -8912,6 +8952,32 @@ function App() {
 								className: "arch-arrow",
 								size: 22
 							})] }, column.title);
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "technical-proof-grid",
+						"aria-label": "기술 구현 검증 계획",
+						children: technicalProofs.map((proof) => {
+							const Icon = proof.icon;
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
+								className: "technical-proof-card",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "technical-proof-head",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { size: 22 }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: proof.label })]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: proof.title }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: proof.text }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: proof.metric }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+										className: "source-link",
+										href: proof.href,
+										target: "_blank",
+										rel: "noreferrer",
+										children: ["기술 근거 ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronRight, { size: 14 })]
+									})
+								]
+							}, proof.title);
 						})
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {

@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>모두의 창업 신속심사 438건 통계 리포트</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --panel-soft: #f1f4f8;
+      --text: #17202a;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --accent: #0f766e;
+      --accent-2: #2563eb;
+      --accent-3: #c2410c;
+      --good: #15803d;
+      --warn: #b45309;
+      --unknown: #6b7280;
+      --shadow: 0 18px 42px rgba(31, 41, 55, 0.08);
+      font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 22px 64px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 26px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .source {
+      min-width: 230px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .source strong {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      height: 34px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .metric strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .metric em {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      font-style: normal;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    section + section {
+      margin-top: 16px;
+    }
+
+    h2 {
+      margin: 0 0 4px;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr) 74px;
+      gap: 12px;
+      align-items: center;
+      min-height: 38px;
+    }
+
+    .bar-label {
+      font-size: 14px;
+      font-weight: 650;
+      color: var(--text);
+    }
+
+    .bar-track {
+      height: 12px;
+      overflow: hidden;
+      background: var(--panel-soft);
+      border-radius: 999px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      min-width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .bar-value {
+      text-align: right;
+      color: var(--muted);
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stage-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stage-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--panel-soft);
+    }
+
+    .stage-card strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stage-card span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .stage-card.good strong {
+      color: var(--good);
+    }
+
+    .stage-card.warn strong {
+      color: var(--warn);
+    }
+
+    .stage-card.unknown strong {
+      color: var(--unknown);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    td:nth-child(2),
+    td:nth-child(3),
+    th:nth-child(2),
+    th:nth-child(3) {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: #eef7f6;
+      padding: 14px 16px;
+      border-radius: 6px;
+      color: #1f3f3b;
+      font-size: 14px;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #0f3f3a;
+    }
+
+    .examples {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .example {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-soft);
+    }
+
+    .example strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .example p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 940px) {
+      header,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        padding: 26px 14px 44px;
+      }
+
+      .metrics,
+      .stage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bar-row {
+        grid-template-columns: 1fr 70px;
+        gap: 8px;
+      }
+
+      .bar-track {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .bar-value {
+        align-self: start;
+      }
+
+      section {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <h1>모두의 창업 신속심사 438건 통계</h1>
+        <p class="lede">26년 1기 1라운드 신속심사 진출자 전체 상세 페이지를 확인해 공개 아이디어, 분야, 창업 실행 단계, 학력/연령 단서를 정리했습니다.</p>
+        <nav class="quick-links" aria-label="결과 파일">
+          <a href="./modoo_fast_track_report.md">요약 리포트</a>
+          <a href="./modoo_fast_track_438_ideas.csv">전체 CSV</a>
+          <a href="./modoo_fast_track_raw.json">원본 JSON</a>
+          <a href="https://www.modoo.or.kr/idea/list/passed">원본 사이트</a>
+        </nav>
+      </div>
+      <aside class="source">
+        <strong>수집 기준</strong>
+        Chrome으로 목록과 438개 상세 페이지를 확인했습니다.<br>
+        상세 접근 실패: 0건<br>
+        공식 진행 상태: 438건 모두 아이디어 접수 완료
+      </aside>
+    </header>
+
+    <div class="metrics" aria-label="핵심 지표">
+      <div class="metric">
+        <span>전체 진출자</span>
+        <strong>438</strong>
+        <em>목록 page=0 + page=1~36 합산</em>
+      </div>
+      <div class="metric">
+        <span>공개 아이디어</span>
+        <strong>294</strong>
+        <em>전체의 67.1%</em>
+      </div>
+      <div class="metric">
+        <span>비공개/판단불가</span>
+        <strong>144</strong>
+        <em>전체의 32.9%</em>
+      </div>
+      <div class="metric">
+        <span>운영/창업 신호</span>
+        <strong>65</strong>
+        <em>공개 아이디어 기준 22.1%</em>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div>
+        <section>
+          <h2>공개 아이디어 기준 분야 분포</h2>
+          <p class="section-note">비공개 144건을 제외한 294건 기준입니다. 사이트의 공식 분야가 대부분 일반/기술이라 설명 문구로 세부 분야를 분류했습니다.</p>
+          <div class="bar-list">
+            <div class="bar-row">
+              <div class="bar-label">AI/소프트웨어/업무자동화</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 100%"></div></div>
+              <div class="bar-value">118 · 40.1%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">지역/관광/로컬</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 39.8%"></div></div>
+              <div class="bar-value">47 · 16.0%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">생활편의/안전/육아</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 28.8%"></div></div>
+              <div class="bar-value">34 · 11.6%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">헬스케어/의료/고령친화</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 27.1%"></div></div>
+              <div class="bar-value">32 · 10.9%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">콘텐츠/게임/문화예술</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 10.2%"></div></div>
+              <div class="bar-value">12 · 4.1%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">친환경/자원순환/에너지</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 9.3%"></div></div>
+              <div class="bar-value">11 · 3.7%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">푸드/농식품/F&B</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 8.5%"></div></div>
+              <div class="bar-value">10 · 3.4%</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">제조/하드웨어/IoT</div>
+              <div class="bar-track"><div class="bar-fill" style="width: 7.6%"></div></div>
+              <div class="bar-value">9 · 3.1%</div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>창업 실행 단계</h2>
+          <p class="section-note">외부 사업자등록 검증이 아니라, 공개 상세 페이지의 운영/판매/출시/고객/매출/계약/투자 등 문구를 기준으로 보수적으로 분류했습니다.</p>
+          <div class="stage-grid">
+            <div class="stage-card">
+              <strong>174</strong>
+              <span>아이디어/기획 중심 · 전체 39.7% · 공개 기준 59.2%</span>
+            </div>
+            <div class="stage-card unknown">
+              <strong>144</strong>
+              <span>비공개/판단불가 · 전체 32.9%</span>
+            </div>
+            <div class="stage-card good">
+              <strong>65</strong>
+              <span>실제 운영/창업 신호 있음 · 전체 14.8% · 공개 기준 22.1%</span>
+            </div>
+            <div class="stage-card warn">
+              <strong>55</strong>
+              <span>개발/검증 준비 단계 · 전체 12.6% · 공개 기준 18.7%</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>전체 기준 분야 통계</h2>
+          <p class="section-note">비공개/판단불가 144건을 포함한 438건 기준입니다.</p>
+          <table>
+            <thead>
+              <tr><th>분야</th><th>건수</th><th>비중</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>비공개/판단불가</td><td>144</td><td>32.9%</td></tr>
+              <tr><td>AI/소프트웨어/업무자동화</td><td>118</td><td>26.9%</td></tr>
+              <tr><td>지역/관광/로컬</td><td>47</td><td>10.7%</td></tr>
+              <tr><td>생활편의/안전/육아</td><td>34</td><td>7.8%</td></tr>
+              <tr><td>헬스케어/의료/고령친화</td><td>32</td><td>7.3%</td></tr>
+              <tr><td>콘텐츠/게임/문화예술</td><td>12</td><td>2.7%</td></tr>
+              <tr><td>친환경/자원순환/에너지</td><td>11</td><td>2.5%</td></tr>
+              <tr><td>푸드/농식품/F&B</td><td>10</td><td>2.3%</td></tr>
+              <tr><td>제조/하드웨어/IoT</td><td>9</td><td>2.1%</td></tr>
+              <tr><td>반려동물</td><td>6</td><td>1.4%</td></tr>
+              <tr><td>뷰티/패션/커머스</td><td>6</td><td>1.4%</td></tr>
+              <tr><td>교육/키즈/역량개발</td><td>6</td><td>1.4%</td></tr>
+              <tr><td>물류/모빌리티/마케팅</td><td>3</td><td>0.7%</td></tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <div>
+        <section>
+          <h2>해석</h2>
+          <div class="callout">
+            <strong>가장 많이 나온 분야</strong>
+            공개된 아이디어만 보면 AI/소프트웨어/업무자동화가 40.1%로 압도적으로 많습니다. 지역/관광/로컬, 생활편의, 헬스케어가 그 다음 축입니다.
+          </div>
+          <div class="examples">
+            <div class="example">
+              <strong>창업 단계 해석</strong>
+              <p>공개 기준으로 실제 운영/창업 신호는 22.1%입니다. 즉, 이미 운영 중인 사업자보다 아이디어/기획 또는 개발 준비 단계가 더 많습니다.</p>
+            </div>
+            <div class="example">
+              <strong>공식 상태</strong>
+              <p>상세 페이지의 창업 기록부에는 438건 모두 진행 상태가 아이디어 접수 완료로 표시됩니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>학력/직업 공개 단서</h2>
+          <p class="section-note">자기소개에 공개된 표현만 집계했습니다.</p>
+          <table>
+            <thead>
+              <tr><th>구분</th><th>건수</th><th>비중</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>미공개/판단불가</td><td>129</td><td>29.5%</td></tr>
+              <tr><td>직장인/전문직</td><td>97</td><td>22.1%</td></tr>
+              <tr><td>대학생/대졸 공개</td><td>87</td><td>19.9%</td></tr>
+              <tr><td>창업자/자영업자</td><td>71</td><td>16.2%</td></tr>
+              <tr><td>대학원 이상</td><td>38</td><td>8.7%</td></tr>
+              <tr><td>고등학생</td><td>10</td><td>2.3%</td></tr>
+              <tr><td>중학생</td><td>4</td><td>0.9%</td></tr>
+              <tr><td>초등학생/어린이</td><td>2</td><td>0.5%</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>연령대 공개 단서</h2>
+          <p class="section-note">연령대는 대부분 직접 공개되지 않아 판단불가 비중이 큽니다.</p>
+          <table>
+            <thead>
+              <tr><th>구분</th><th>건수</th><th>비중</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>미공개/판단불가</td><td>337</td><td>76.9%</td></tr>
+              <tr><td>20대/청년 추정</td><td>78</td><td>17.8%</td></tr>
+              <tr><td>10대 이하/청소년</td><td>12</td><td>2.7%</td></tr>
+              <tr><td>60대 이상/시니어</td><td>6</td><td>1.4%</td></tr>
+              <tr><td>50대/중장년</td><td>2</td><td>0.5%</td></tr>
+              <tr><td>40대</td><td>2</td><td>0.5%</td></tr>
+              <tr><td>30대</td><td>1</td><td>0.2%</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>지역 분포 상위</h2>
+          <p class="section-note">지역 공개 또는 표시가 확인된 값 기준입니다.</p>
+          <table>
+            <thead>
+              <tr><th>지역</th><th>건수</th><th>비중</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>미상</td><td>97</td><td>22.1%</td></tr>
+              <tr><td>서울</td><td>55</td><td>12.6%</td></tr>
+              <tr><td>대전</td><td>41</td><td>9.4%</td></tr>
+              <tr><td>경기</td><td>33</td><td>7.5%</td></tr>
+              <tr><td>충남</td><td>32</td><td>7.3%</td></tr>
+              <tr><td>부산</td><td>31</td><td>7.1%</td></tr>
+              <tr><td>대구</td><td>23</td><td>5.3%</td></tr>
+              <tr><td>전남</td><td>21</td><td>4.8%</td></tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      작성일: 2026-05-20 KST. 이 리포트는 공개 페이지 텍스트 기반 분석이며, 비공개 아이디어와 외부 사업자 검증은 포함하지 않습니다.
+    </footer>
+  </main>
+</body>
+</html>
