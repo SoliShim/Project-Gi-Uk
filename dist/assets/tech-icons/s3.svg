@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>S3 Storage</title>
+  <rect width="64" height="64" rx="14" fill="#569A31"/>
+  <path d="M18 18c0-4.42 28-4.42 28 0v28c0 4.42-28 4.42-28 0V18Z" fill="#fff" opacity=".94"/>
+  <path d="M18 18c0 4.42 28 4.42 28 0M18 27c0 4.42 28 4.42 28 0M18 36c0 4.42 28 4.42 28 0M18 45c0 4.42 28 4.42 28 0" fill="none" stroke="#569A31" stroke-width="3"/>
+</svg>
